@@ -1,0 +1,66 @@
+docker_image: &docker_image
+  docker:
+    - image: circleci/openjdk:11-slim
+
+set_working_directory: &set_working_directory
+  working_directory: ~/simple-yaml
+
+checkout_and_restore_cache: &checkout_and_restore_cache
+  - checkout
+      - restore_cache:
+      keys:
+        - v1-dependencies-{{ checksum "build.gradle" }}
+        - v1-dependencies-
+
+backup_cache: &backup_cache
+  - save_cache:
+      paths:
+        - ~/.gradle
+      key: v1-dependencies-{{ checksum "build.gradle" }}
+
+version: 2.1
+jobs:
+  test:
+    <<: *docker_image
+    <<: *set_working_directory
+    steps:
+      <<: *checkout_and_restore_cache
+      - run: |
+          ./gradlew build
+  build:
+    <<: *docker_image
+    <<: *set_working_directory
+    steps:
+      <<: *checkout_and_restore_cache
+      - run: ./gradlew build artifactoryPublish -Dsnapshot=true
+      <<: *backup_cache
+      - store_artifacts:
+          path: build/libs
+  publish:
+    <<: *docker_image
+      <<: *set_working_directory
+      steps:
+        <<: *checkout_and_restore_cache
+      - run: ./gradlew build bintrayUpload -x test
+        <<: *backup_cache
+
+workflows:
+  build_test:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore:
+                - master
+      - build:
+          filters:
+            branches:
+              only: master
+  publish_artifacts:
+    jobs:
+      - publish:
+          filters:
+            branches:
+              only: non-existent-branch
+            tags:
+              only: /^v[0-9\.]+$/
