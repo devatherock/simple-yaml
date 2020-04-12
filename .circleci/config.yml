@@ -1,6 +1,6 @@
 docker_image: &docker_image
   docker:
-    - image: circleci/openjdk:11-slim
+    - image: openjdk:11-slim
 
 set_working_directory: &set_working_directory
   working_directory: ~/simple-yaml
