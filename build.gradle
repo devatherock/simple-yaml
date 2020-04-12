@@ -1,0 +1,20 @@
+plugins {
+    id 'groovy'
+    id 'maven'
+    id 'maven-publish'
+    id 'com.jfrog.bintray' version '1.8.5'
+    id 'com.jfrog.artifactory' version '4.15.1'
+}
+
+targetCompatibility = 1.8
+
+group = 'io.github.devatherock'
+version = '0.0.1' + (Boolean.valueOf(System.getProperty('snapshot')) ? '-SNAPSHOT' : '')
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.8'
+}
