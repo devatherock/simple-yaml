@@ -7,10 +7,10 @@ set_working_directory: &set_working_directory
 
 checkout_and_restore_cache: &checkout_and_restore_cache
   - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "build.gradle" }}
-            - v1-dependencies-
+  - restore_cache:
+      keys:
+        - v1-dependencies-{{ checksum "build.gradle" }}
+        - v1-dependencies-
 
 backup_cache: &backup_cache
   - save_cache:
