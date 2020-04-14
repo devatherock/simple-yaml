@@ -9,7 +9,7 @@ plugins {
 targetCompatibility = 1.8
 
 group = 'io.github.devatherock'
-version = '0.0.1' + (Boolean.valueOf(System.getProperty('snapshot')) ? '-SNAPSHOT' : '')
+version = '0.0.2' + (Boolean.valueOf(System.getProperty('snapshot')) ? '-SNAPSHOT' : '')
 
 apply from: 'publish.gradle'
 
@@ -18,5 +18,5 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.8'
+    implementation group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.7'
 }
