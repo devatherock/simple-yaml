@@ -1,0 +1,4 @@
+foo: bar
+logging.level:
+  io.github.devatherock: INFO
+  io.github.devatherock.simpleyaml: WARN

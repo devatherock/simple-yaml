@@ -53,7 +53,8 @@ class SimpleYamlOutput {
                 }
                 builder.replace(builder.length() - 2, builder.length(), ' ]')
                 builder.append(System.lineSeparator())
-            } else if (numericFieldsToQuote.contains(key) && value instanceof String && value =~ '^[0-9]+$') {
+            } else if (numericFieldsToQuote.contains(key) && ((value instanceof String && value =~ '^[0-9]+$') ||
+                    value instanceof Number)) {
                 builder.append(' ')
                 builder.append(quoteType.value)
                 builder.append(value)

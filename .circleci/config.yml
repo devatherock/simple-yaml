@@ -1,9 +1,22 @@
 docker_image: &docker_image
   docker:
     - image: openjdk:11-slim
+      auth:
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+
+slack_image: &slack_image
+  docker:
+    - image: devatherock/simple-slack:0.4.0
+      auth:
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
 
 set_working_directory: &set_working_directory
   working_directory: ~/simple-yaml
+
+resource_class: &resource_class
+  resource_class: small
 
 restore_cache_keys: &restore_cache_keys
   keys:
@@ -19,6 +32,7 @@ version: 2.1
 jobs:
   test:
     <<: *docker_image
+    <<: *resource_class
     <<: *set_working_directory
     steps:
       - checkout
@@ -28,6 +42,7 @@ jobs:
           ./gradlew build
   build:
     <<: *docker_image
+    <<: *resource_class
     <<: *set_working_directory
     steps:
       - checkout
@@ -40,6 +55,7 @@ jobs:
           path: build/libs
   publish:
     <<: *docker_image
+    <<: *resource_class
     <<: *set_working_directory
     steps:
       - checkout
@@ -49,23 +65,80 @@ jobs:
       - save_cache:
           <<: *save_cache_config
 
+  notify_success:
+    <<: *slack_image
+    <<: *resource_class
+    environment:
+      TEXT: "Success: {{.CircleBuildUrl}} by {{.CircleUsername}}"
+      COLOR: "#33ad7f"
+      CHANNEL: general
+      TITLE: "Build completed"
+    steps:
+      - run: /bin/simpleslack
+  notify_failure:
+    <<: *slack_image
+    <<: *resource_class
+    environment:
+      TEXT: "Failure: {{.CircleBuildUrl}} by {{.CircleUsername}}"
+      COLOR: "#a1040c"
+      CHANNEL: general
+      TITLE: "Build completed"
+    steps:
+      - run:
+          name: Failure notification
+          command: /bin/simpleslack
+          when: on_fail
+
 workflows:
   build_test:
     jobs:
       - test:
+          context:
+            - docker-credentials
           filters:
             branches:
               ignore:
                 - master
       - build:
+          context:
+            - docker-credentials
+            - bintray-credentials
           filters:
             branches:
               only: master
+      - notify_success:
+          context:
+            - docker-credentials
+            - slack-webhook
+          requires:
+            - build
+      - notify_failure:
+          context:
+            - docker-credentials
+            - slack-webhook
+          requires:
+            - build
   publish_artifacts:
     jobs:
       - publish:
+          context:
+            - docker-credentials
+            - bintray-credentials
+            - sonatype-credentials
           filters:
             branches:
               only: non-existent-branch
             tags:
               only: /^v[0-9\.]+$/
+      - notify_success:
+          context:
+            - docker-credentials
+            - slack-webhook
+          requires:
+            - publish
+      - notify_failure:
+          context:
+            - docker-credentials
+            - slack-webhook
+          requires:
+            - publish
