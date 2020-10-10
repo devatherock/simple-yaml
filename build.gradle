@@ -32,8 +32,10 @@ dependencies {
 
 jacocoTestReport {
 	reports {
-		xml.enabled false
-		csv.enabled false
+		xml.enabled true
+        csv.enabled false
+        html.enabled true
+		xml.destination file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml") // Required for coveralls
 		html.destination file("${buildDir}/reports/jacoco")
 	}
 }
