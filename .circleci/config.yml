@@ -48,7 +48,7 @@ jobs:
       - checkout
       - restore_cache:
           <<: *restore_cache_keys
-      - run: ./gradlew build artifactoryPublish -Dsnapshot=true
+      - run: ./gradlew build artifactoryPublish sonarqube -Dsnapshot=true -Dsonar.login=$SONAR_TOKEN
       - save_cache:
           <<: *save_cache_config
       - store_artifacts:
@@ -103,6 +103,7 @@ workflows:
           context:
             - docker-credentials
             - bintray-credentials
+            - sonar-credentials
           filters:
             branches:
               only: master

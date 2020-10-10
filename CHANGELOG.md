@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Added
 - [Issue 7](https://github.com/devatherock/simple-yaml/issues/7): Unit tests
+- [Issue 10](https://github.com/devatherock/simple-yaml/issues/10): Code coverage badge
 
 ### Changed
 - Corrected applying quotes to numeric fields
