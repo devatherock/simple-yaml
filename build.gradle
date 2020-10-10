@@ -4,6 +4,7 @@ plugins {
     id 'maven-publish'
     id 'jacoco'
     id 'org.sonarqube' version '3.0'
+	id 'com.github.kt3k.coveralls' version '2.10.2'
     id 'com.jfrog.bintray' version '1.8.5'
     id 'com.jfrog.artifactory' version '4.15.1'
 }
@@ -42,4 +43,12 @@ test {
         events 'passed', 'failed'
     }
     finalizedBy jacocoTestReport
+}
+
+/** SonarQube config **/
+sonarqube {
+	properties {
+		property 'sonar.jacoco.reportPaths', 'build/jacoco/test.exec'
+		property 'sonar.junit.reportPaths', 'build/test-results/test'
+	}
 }
