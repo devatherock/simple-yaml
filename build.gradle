@@ -9,6 +9,7 @@ plugins {
     id 'com.jfrog.artifactory' version '4.15.1'
 }
 
+sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 group = 'io.github.devatherock'
