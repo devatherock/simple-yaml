@@ -1,6 +1,9 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- [Issue 13](https://github.com/devatherock/simple-yaml/issues/13): Static method to generate yaml
+
 ### Changed
 - [Issue 8](https://github.com/devatherock/simple-yaml/issues/8): Rewrote in Java
 

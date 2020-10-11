@@ -7,6 +7,21 @@ import spock.lang.Specification
  */
 class SimpleYamlOutputSpec extends Specification {
 
+    def 'test to yaml - default settings'() {
+        given:
+        String expectedOutput = SimpleYamlOutputSpec.class.classLoader.getResourceAsStream(expectedOutputFile).text
+
+        when:
+        String output = SimpleYamlOutput.toYaml(input)
+
+        then:
+        output == expectedOutput
+
+        where:
+        input << getDefaultSettingsInputs()
+        expectedOutputFile << getDefaultSettingsOutputs()
+    }
+
     def 'test dump - default settings'() {
         given:
         String expectedOutput = SimpleYamlOutputSpec.class.classLoader.getResourceAsStream(expectedOutputFile).text
@@ -18,52 +33,8 @@ class SimpleYamlOutputSpec extends Specification {
         output == expectedOutput
 
         where:
-        input << [
-                [
-                        'foo'  : 'bar',
-                        'hello': 'world'
-                ],
-                [
-                        'foo'   : 'bar',
-                        'colors': ['red', 'blue']
-                ],
-                [
-                        'foo'          : 'bar',
-                        'logging.level': [
-                                'io.github.devatherock'           : 'INFO',
-                                'io.github.devatherock.simpleyaml': 'WARN'
-                        ]
-                ],
-                [
-                        'foo'   : 'bar',
-                        'colors': [
-                                [
-                                        'name': 'red',
-                                        'code': 'ff0000'
-                                ],
-                                [
-                                        'name': 'blue',
-                                        'code': '0000ff'
-                                ]
-                        ]
-                ],
-                [
-                        'foo' : 'bar',
-                        'text': 'The quick brown fox' + System.lineSeparator() + 'jumped over a lazy dog'
-                ],
-                [
-                        'foo'  : 'bar',
-                        'count': 1
-                ]
-        ]
-        expectedOutputFile << [
-                'string-values.yml',
-                'list-value.yml',
-                'map-value.yml',
-                'list-of-maps.yml',
-                'new-line.yml',
-                'numeric-value.yml'
-        ]
+        input << getDefaultSettingsInputs()
+        expectedOutputFile << getDefaultSettingsOutputs()
     }
 
     def 'test dump - quote numeric fields'() {
@@ -167,5 +138,57 @@ class SimpleYamlOutputSpec extends Specification {
 
         then:
         output == expectedOutput
+    }
+
+    def getDefaultSettingsInputs() {
+        [
+                [
+                        'foo'  : 'bar',
+                        'hello': 'world'
+                ],
+                [
+                        'foo'   : 'bar',
+                        'colors': ['red', 'blue']
+                ],
+                [
+                        'foo'          : 'bar',
+                        'logging.level': [
+                                'io.github.devatherock'           : 'INFO',
+                                'io.github.devatherock.simpleyaml': 'WARN'
+                        ]
+                ],
+                [
+                        'foo'   : 'bar',
+                        'colors': [
+                                [
+                                        'name': 'red',
+                                        'code': 'ff0000'
+                                ],
+                                [
+                                        'name': 'blue',
+                                        'code': '0000ff'
+                                ]
+                        ]
+                ],
+                [
+                        'foo' : 'bar',
+                        'text': 'The quick brown fox' + System.lineSeparator() + 'jumped over a lazy dog'
+                ],
+                [
+                        'foo'  : 'bar',
+                        'count': 1
+                ]
+        ]
+    }
+
+    def getDefaultSettingsOutputs() {
+        [
+                'string-values.yml',
+                'list-value.yml',
+                'map-value.yml',
+                'list-of-maps.yml',
+                'new-line.yml',
+                'numeric-value.yml'
+        ]
     }
 }
