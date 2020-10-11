@@ -39,7 +39,7 @@ jobs:
       - restore_cache:
           <<: *restore_cache_keys
       - run: |
-          ./gradlew build
+          ./gradlew check
   build:
     <<: *docker_image
     <<: *resource_class

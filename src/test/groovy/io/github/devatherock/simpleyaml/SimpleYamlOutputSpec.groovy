@@ -143,4 +143,29 @@ class SimpleYamlOutputSpec extends Specification {
         then:
         output == expectedOutput
     }
+
+    def 'test dump - unindented object array values'() {
+        given:
+        String expectedOutput = SimpleYamlOutputSpec.class.classLoader.getResourceAsStream('unindented-list-of-maps.yml').text
+
+        when:
+        String output = new SimpleYamlOutput(indentArrays: false, flowStyleArrayFields: ['foo', 'colors']).dump([
+
+                'foo'   : 'bar',
+                'colors': [
+                        [
+                                'name': 'red',
+                                'code': 'ff0000'
+                        ],
+                        [
+                                'name': 'blue',
+                                'code': '0000ff'
+                        ]
+                ]
+
+        ])
+
+        then:
+        output == expectedOutput
+    }
 }
