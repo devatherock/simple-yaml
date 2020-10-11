@@ -1,0 +1,6 @@
+foo: bar
+colors:
+- name: red
+  code: ff0000
+- name: blue
+  code: 0000ff

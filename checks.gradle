@@ -1,0 +1,50 @@
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.enabled true
+        xml.destination file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml") // Required for coveralls
+        html.destination file("${buildDir}/reports/jacoco")
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'CLASS'
+
+            limit {
+                counter = 'BRANCH'
+                minimum = 1.00
+            }
+            limit {
+                counter = 'COMPLEXITY'
+                minimum = 1.00
+            }
+            limit {
+                counter = 'INSTRUCTION'
+                minimum = 1.00
+            }
+            limit {
+                counter = 'LINE'
+                minimum = 1.00
+            }
+        }
+    }
+}
+jacocoTestReport.finalizedBy jacocoTestCoverageVerification
+
+test {
+    testLogging {
+        events 'passed', 'failed'
+    }
+    finalizedBy jacocoTestReport
+}
+
+/** SonarQube config **/
+sonarqube {
+    properties {
+        property 'sonar.jacoco.reportPaths', 'build/jacoco/test.exec'
+        property 'sonar.junit.reportPaths', 'build/test-results/test'
+    }
+}
