@@ -27,6 +27,11 @@ public class SimpleYamlOutput {
 	private static final Pattern PTRN_NUMERIC_VALUE = Pattern.compile("^[0-9]+$");
 
 	/**
+	 * Default instance
+	 */
+	private static final SimpleYamlOutput DEFAULT_INSTANCE = new SimpleYamlOutput();
+
+	/**
 	 * The indent size
 	 */
 	@Builder.Default
@@ -55,6 +60,16 @@ public class SimpleYamlOutput {
 	 */
 	@Builder.Default
 	private List<String> flowStyleArrayFields = new ArrayList<>();
+
+	/**
+	 * Converts the given object into a yaml String
+	 *
+	 * @param object the input object to convert to yaml
+	 * @return the yaml representation of the input object
+	 */
+	public static String toYaml(Map<Object, Object> object) {
+		return DEFAULT_INSTANCE.dump(object);
+	}
 
 	/**
 	 * Converts the given object into a yaml String
