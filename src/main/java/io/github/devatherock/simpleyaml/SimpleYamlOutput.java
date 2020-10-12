@@ -1,12 +1,11 @@
 package io.github.devatherock.simpleyaml;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Singular;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -15,10 +14,8 @@ import java.util.regex.Pattern;
 /**
  * Class that converts an object into a simple <em>block</em> yaml
  */
-@Getter
-@Setter
 @Builder
-@NoArgsConstructor
+@NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 @AllArgsConstructor
 public class SimpleYamlOutput {
 	/**
@@ -35,49 +32,53 @@ public class SimpleYamlOutput {
 	 * The indent size
 	 */
 	@Builder.Default
-	private int indentSize = 2;
+	private final int indentSize = 2;
 
 	/**
 	 * List of fields with numeric values for which to quote the value
 	 */
-	@Builder.Default
-	private List<String> numericFieldsToQuote = new ArrayList<>();
+	@Singular("numericFieldToQuote")
+	private final List<String> numericFieldsToQuote;
 
 	/**
 	 * Indicates whether to indent array values
 	 */
 	@Builder.Default
-	private boolean indentArrays = true;
+	private final boolean indentArrays = true;
 
 	/**
 	 * The type of quote to use when quoting numeric fields
 	 */
 	@Builder.Default
-	private QuoteType quoteType = QuoteType.DOUBLE;
+	private final QuoteType quoteType = QuoteType.DOUBLE;
 
 	/**
 	 * List of field name for which to use arrays with square brackets
 	 */
-	@Builder.Default
-	private List<String> flowStyleArrayFields = new ArrayList<>();
+	@Singular("flowStyleArrayField")
+	private final List<String> flowStyleArrayFields;
 
 	/**
 	 * Converts the given object into a yaml String
 	 *
+	 * @param <K>    the type of keys in the input map
+	 * @param <V>    the type of values in the input map
 	 * @param object the input object to convert to yaml
 	 * @return the yaml representation of the input object
 	 */
-	public static String toYaml(Map<Object, Object> object) {
+	public static <K, V> String toYaml(Map<K, V> object) {
 		return DEFAULT_INSTANCE.dump(object);
 	}
 
 	/**
 	 * Converts the given object into a yaml String
 	 *
+	 * @param <K>    the type of keys in the input map
+	 * @param <V>    the type of values in the input map
 	 * @param object the input object to convert to yaml
 	 * @return the yaml representation of the input object
 	 */
-	public String dump(Map<Object, Object> object) {
+	public <K, V> String dump(Map<K, V> object) {
 		StringBuilder yamlContent = new StringBuilder();
 		convertToYaml(object, yamlContent, 0);
 
@@ -97,14 +98,14 @@ public class SimpleYamlOutput {
 	 * @param builder
 	 * @param indent
 	 */
-	private void convertToYaml(Map<Object, Object> map, StringBuilder builder, int indent) {
+	private <K, V> void convertToYaml(Map<K, V> map, StringBuilder builder, int indent) {
 		map.forEach((key, value) -> {
 			applyIndent(builder, indent);
 			builder.append(key);
 			builder.append(':');
 
 			// To write arrays with square brackets
-			if (flowStyleArrayFields.contains(key) && value instanceof List
+			if (null != flowStyleArrayFields && flowStyleArrayFields.contains(key) && value instanceof List
 					&& !(((List<Object>) value).stream().anyMatch(element -> element instanceof Map))) {
 				builder.append(" [ ");
 				((List<Object>) value).forEach(listElement -> {
@@ -113,7 +114,7 @@ public class SimpleYamlOutput {
 				});
 				builder.replace(builder.length() - 2, builder.length(), " ]");
 				builder.append(System.lineSeparator());
-			} else if (numericFieldsToQuote.contains(key)
+			} else if (null != numericFieldsToQuote && numericFieldsToQuote.contains(key)
 					&& ((value instanceof String && PTRN_NUMERIC_VALUE.matcher((String) value).matches())
 							|| value instanceof Number)) {
 				builder.append(' ');

@@ -3,9 +3,11 @@
 ## [Unreleased]
 ### Added
 - [Issue 13](https://github.com/devatherock/simple-yaml/issues/13): Static method to generate yaml
+- Usage instructions to readme
 
 ### Changed
 - [Issue 8](https://github.com/devatherock/simple-yaml/issues/8): Rewrote in Java
+- [Issue 15](https://github.com/devatherock/simple-yaml/issues/15): Made the fields final
 
 ## [0.1.0] - 2020-10-11
 ### Added

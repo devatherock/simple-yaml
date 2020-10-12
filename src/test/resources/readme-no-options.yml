@@ -1,0 +1,5 @@
+foo: bar
+version: 1
+colors:
+  - red
+  - blue

@@ -22,27 +22,12 @@ class SimpleYamlOutputSpec extends Specification {
         expectedOutputFile << getDefaultSettingsOutputs()
     }
 
-    def 'test dump - default settings'() {
-        given:
-        String expectedOutput = SimpleYamlOutputSpec.class.classLoader.getResourceAsStream(expectedOutputFile).text
-
-        when:
-        String output = new SimpleYamlOutput().dump(input)
-
-        then:
-        output == expectedOutput
-
-        where:
-        input << getDefaultSettingsInputs()
-        expectedOutputFile << getDefaultSettingsOutputs()
-    }
-
     def 'test dump - quote numeric fields'() {
         given:
         String expectedOutput = SimpleYamlOutputSpec.class.classLoader.getResourceAsStream('quoted-numeric-value.yml').text
 
         when:
-        String output = new SimpleYamlOutput(numericFieldsToQuote: ['version']).dump(input)
+        String output = SimpleYamlOutput.builder().numericFieldToQuote('version').build().dump(input)
 
         then:
         output == expectedOutput
@@ -65,7 +50,7 @@ class SimpleYamlOutputSpec extends Specification {
         String expectedOutput = SimpleYamlOutputSpec.class.classLoader.getResourceAsStream(expectedOutputFile).text
 
         when:
-        String output = new SimpleYamlOutput(numericFieldsToQuote: ['version']).dump(input)
+        String output = SimpleYamlOutput.builder().numericFieldToQuote('version').build().dump(input)
 
         then:
         output == expectedOutput
@@ -92,7 +77,7 @@ class SimpleYamlOutputSpec extends Specification {
         String expectedOutput = SimpleYamlOutputSpec.class.classLoader.getResourceAsStream('flow-list-value.yml').text
 
         when:
-        String output = new SimpleYamlOutput(flowStyleArrayFields: ['colors']).dump([
+        String output = SimpleYamlOutput.builder().flowStyleArrayField('colors').build().dump([
                 'foo'   : 'bar',
                 'colors': ['red', 'blue']
         ])
@@ -106,7 +91,7 @@ class SimpleYamlOutputSpec extends Specification {
         String expectedOutput = SimpleYamlOutputSpec.class.classLoader.getResourceAsStream('unindented-list-value.yml').text
 
         when:
-        String output = new SimpleYamlOutput(indentArrays: false).dump([
+        String output = SimpleYamlOutput.builder().indentArrays(false).build().dump([
                 'foo'   : 'bar',
                 'colors': ['red', 'blue']
         ])
@@ -120,8 +105,9 @@ class SimpleYamlOutputSpec extends Specification {
         String expectedOutput = SimpleYamlOutputSpec.class.classLoader.getResourceAsStream('unindented-list-of-maps.yml').text
 
         when:
-        String output = new SimpleYamlOutput(indentArrays: false, flowStyleArrayFields: ['foo', 'colors']).dump([
-
+        String output = SimpleYamlOutput.builder()
+                .indentArrays(false)
+                .flowStyleArrayFields(['foo', 'colors']).build().dump([
                 'foo'   : 'bar',
                 'colors': [
                         [
