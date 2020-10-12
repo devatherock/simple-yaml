@@ -7,3 +7,65 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # simple-yaml
 A simple YAML generator for Java
+
+## Usage
+
+For Gradle:
+```groovy
+dependencies {
+    implementation group: 'io.github.devatherock', name: 'simple-yaml', version: '0.2.0'
+}
+```
+
+For Maven:
+```xml
+<dependencies>
+    <dependency>
+        <groupId>io.github.devatherock</groupId>
+        <artifactId>simple-yaml</artifactId>
+        <version>0.2.0</version>
+    </dependency>
+</dependencies>
+```
+
+### Generating YAML
+#### With default settings
+```java
+Map<String, Object> map = new HashMap<>();
+map.put("foo", "bar");
+map.put("version", "1");
+map.put("colors", Arrays.asList("red", "blue"));
+String output = SimpleYamlOutput.toYaml(map);
+```
+
+Output:
+```yaml
+foo: bar
+version: 1
+colors:
+  - red
+  - blue
+```
+
+#### With custom settings
+```java
+Map<String, Object> map = new HashMap<>();
+map.put("foo", "bar");
+map.put("version", "1");
+map.put("colors", Arrays.asList("red", "blue"));
+SimpleYamlOutput yaml = SimpleYamlOutput.builder()
+        .numericFieldToQuote("version")
+        .flowStyleArrayField("colors")
+        .indentArrays(false)
+        .indentSize(3)
+        .quoteType(SimpleYamlOutput.QuoteType.SINGLE)
+        .build();
+String output = yaml.dump(map);
+```
+
+Output:
+```yaml
+foo: bar
+version: '1'
+colors: [ red, blue ]
+```
