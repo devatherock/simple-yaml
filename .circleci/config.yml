@@ -17,7 +17,7 @@ resource_class: &resource_class
 executors:
   jdk-executor:
     docker:
-      - image: openjdk:11-slim
+      - image: circleci/openjdk:11-jdk
         auth:
           username: $DOCKER_USERNAME
           password: $DOCKER_PASSWORD
