@@ -54,6 +54,7 @@ workflows:
   build_test:
     jobs:
       - gradle/test:
+          name: test
           executor: jdk-executor
           context:
             - docker-credentials
@@ -62,6 +63,7 @@ workflows:
               ignore:
                 - master
       - gradle/run:
+          name: build
           executor: jdk-executor
           context:
             - docker-credentials
@@ -76,16 +78,17 @@ workflows:
             - docker-credentials
             - slack-webhook
           requires:
-            - gradle/run
+            - build
       - notify_failure:
           context:
             - docker-credentials
             - slack-webhook
           requires:
-            - gradle/run
+            - build
   publish_artifacts:
     jobs:
       - gradle/run:
+          name: publish
           executor: jdk-executor
           context:
             - docker-credentials
@@ -102,10 +105,10 @@ workflows:
             - docker-credentials
             - slack-webhook
           requires:
-            - gradle/run
+            - publish
       - notify_failure:
           context:
             - docker-credentials
             - slack-webhook
           requires:
-            - gradle/run
+            - publish
