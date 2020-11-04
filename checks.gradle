@@ -3,7 +3,7 @@ jacocoTestReport {
         xml.enabled true
         csv.enabled false
         html.enabled true
-        xml.destination file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml") // Required for coveralls
+        xml.destination file("${buildDir}/reports/jacoco/test/jacocoTestReport.xml") // Required for coveralls and sonar
         html.destination file("${buildDir}/reports/jacoco")
     }
 }
@@ -44,7 +44,6 @@ test {
 /** SonarQube config **/
 sonarqube {
     properties {
-        property 'sonar.jacoco.reportPaths', 'build/jacoco/test.exec'
         property 'sonar.junit.reportPaths', 'build/test-results/test'
     }
 }
