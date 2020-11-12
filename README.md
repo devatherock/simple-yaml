@@ -2,8 +2,7 @@
 [![Download](https://api.bintray.com/packages/devatherock/simple-yaml/simple-yaml/images/download.svg) ](https://bintray.com/devatherock/simple-yaml/simple-yaml/_latestVersion)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=simple-yaml&metric=ncloc)](https://sonarcloud.io/dashboard?id=simple-yaml)
 [![Coverage Status](https://coveralls.io/repos/github/devatherock/simple-yaml/badge.svg?branch=master)](https://coveralls.io/github/devatherock/simple-yaml?branch=master)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=simple-yaml&metric=bugs)](https://sonarcloud.io/dashboard?id=simple-yaml)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=simple-yaml&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=simple-yaml)
+[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=simple-yaml&metric=alert_status)](https://sonarcloud.io/component_measures?id=simple-yaml&metric=alert_status&view=list)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # simple-yaml
 A simple YAML generator for Java
