@@ -5,3 +5,5 @@
 .settings
 /bin/
 .project
+code-formatter.xml
+checkstyle.xml
