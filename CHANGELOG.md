@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased]
+### Added
+- Dependency check plugin
+
+### Changed
+- Publication of artifacts to Sonatype Nexus due to bintray sunset
+- Upgraded dependency versions
+- Used `publish.gradle` and `checks.gradle` from `gradle-includes`
+- Refactored CI pipeline with proper gradle caching
+
 ## [0.2.0] - 2020-11-04
 ### Added
 - [Issue 13](https://github.com/devatherock/simple-yaml/issues/13): Static method to generate yaml

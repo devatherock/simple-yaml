@@ -1,5 +1,5 @@
 [![CircleCI](https://img.shields.io/circleci/project/github/devatherock/simple-yaml/master.svg)](https://circleci.com/gh/devatherock/simple-yaml)
-[![Download](https://api.bintray.com/packages/devatherock/simple-yaml/simple-yaml/images/download.svg) ](https://bintray.com/devatherock/simple-yaml/simple-yaml/_latestVersion)
+[![Download](https://img.shields.io/maven-central/v/io.github.devatherock/simple-yaml)](https://mvnrepository.com/artifact/io.github.devatherock/simple-yaml)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=simple-yaml&metric=ncloc)](https://sonarcloud.io/dashboard?id=simple-yaml)
 [![Coverage Status](https://coveralls.io/repos/github/devatherock/simple-yaml/badge.svg?branch=master)](https://coveralls.io/github/devatherock/simple-yaml?branch=master)
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=simple-yaml&metric=alert_status)](https://sonarcloud.io/component_measures?id=simple-yaml&metric=alert_status&view=list)
