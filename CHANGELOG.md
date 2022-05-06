@@ -1,6 +1,10 @@
 # Changelog
 
 ## [Unreleased]
+### Changed
+- Configure Renovate
+
+## [0.3.0] - 2022-05-06
 ### Added
 - Dependency check plugin
 
