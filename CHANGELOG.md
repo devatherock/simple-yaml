@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Changed
 - Configure Renovate
+- chore(deps): update dependency org.spockframework:spock-core to v2
 
 ## [0.3.0] - 2022-05-06
 ### Added
