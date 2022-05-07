@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Changed
 - Configure Renovate
+- chore(deps): update dependency cimg/openjdk to v17
 
 ## [0.3.0] - 2022-05-06
 ### Added
