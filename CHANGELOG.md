@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Changed
 - Configure Renovate
+- chore(deps): update dependency gradle to v7
 
 ## [0.3.0] - 2022-05-06
 ### Added
