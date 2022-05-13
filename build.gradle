@@ -15,7 +15,7 @@ targetCompatibility = 1.8
 
 group = 'io.github.devatherock'
 description = 'A simple YAML generator for Java'
-version = (System.env.CIRCLE_TAG ? System.env.CIRCLE_TAG.substring(1): '0.3.0') +
+version = (System.env.CIRCLE_TAG ? System.env.CIRCLE_TAG.substring(1): '0.4.0') +
         (Boolean.valueOf(System.getProperty('snapshot')) ? '-SNAPSHOT' : '')
 
 repositories {

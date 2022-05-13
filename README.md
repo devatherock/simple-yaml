@@ -12,7 +12,7 @@ A simple YAML generator for Java
 For Gradle:
 ```groovy
 dependencies {
-    implementation group: 'io.github.devatherock', name: 'simple-yaml', version: '0.2.0'
+    implementation group: 'io.github.devatherock', name: 'simple-yaml', version: '0.3.0'
 }
 ```
 
@@ -22,7 +22,7 @@ For Maven:
     <dependency>
         <groupId>io.github.devatherock</groupId>
         <artifactId>simple-yaml</artifactId>
-        <version>0.2.0</version>
+        <version>0.3.0</version>
     </dependency>
 </dependencies>
 ```
