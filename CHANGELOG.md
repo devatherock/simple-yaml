@@ -3,6 +3,7 @@
 ## [Unreleased]
 ### Changed
 - Configure Renovate
+- chore(deps): update plugin org.sonarqube to v3.4.0.2513
 
 ## [0.3.0] - 2022-05-06
 ### Added
