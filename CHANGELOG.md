@@ -5,6 +5,7 @@
 - Configure Renovate
 - chore(deps): update plugin org.sonarqube to v3.4.0.2513
 - chore(deps): update plugin org.owasp.dependencycheck to v7.1.1
+- chore(deps): update cimg/openjdk docker tag to v18
 
 ## [0.3.0] - 2022-05-06
 ### Added
