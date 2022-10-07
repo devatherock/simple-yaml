@@ -6,6 +6,7 @@
 - chore(deps): update plugin org.sonarqube to v3.4.0.2513
 - chore(deps): update plugin org.owasp.dependencycheck to v7.1.1
 - chore(deps): update plugin org.owasp.dependencycheck to v7.2.1
+- feat: Updated changelog updater user
 
 ## [0.3.0] - 2022-05-06
 ### Added
