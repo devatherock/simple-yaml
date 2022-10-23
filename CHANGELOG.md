@@ -8,6 +8,7 @@
 - chore(deps): update plugin org.owasp.dependencycheck to v7.2.1
 - feat: Updated changelog updater user
 - chore(deps): update dependency gradle to v6.9.3
+- chore(deps): update plugin org.owasp.dependencycheck to v7.3.0
 
 ## [0.3.0] - 2022-05-06
 ### Added
