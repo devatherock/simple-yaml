@@ -18,6 +18,7 @@
 - chore(deps): update plugin org.owasp.dependencycheck to v8
 - chore(deps): update plugin org.owasp.dependencycheck to v8.0.2
 - fix(deps): update dependency org.projectlombok:lombok to v1.18.26
+- chore(deps): update plugin org.owasp.dependencycheck to v8.1.0
 
 ## [0.3.0] - 2022-05-06
 ### Added
