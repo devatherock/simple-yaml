@@ -22,6 +22,7 @@
 - chore(deps): update plugin org.sonarqube to v4
 - chore(deps): update dependency gradle to v6.9.4
 - chore(deps): update plugin com.github.kt3k.coveralls to v2.12.2
+- chore(deps): update plugin io.github.gradle-nexus.publish-plugin to v1.3.0
 
 ## [0.3.0] - 2022-05-06
 ### Added
