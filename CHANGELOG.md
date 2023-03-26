@@ -24,6 +24,7 @@
 - chore(deps): update plugin com.github.kt3k.coveralls to v2.12.2
 - chore(deps): update plugin io.github.gradle-nexus.publish-plugin to v1.3.0
 - chore(deps): update plugin org.owasp.dependencycheck to v8.2.1
+- fix(deps): update dependency org.spockframework:spock-core to v2
 
 ## [0.3.0] - 2022-05-06
 ### Added
