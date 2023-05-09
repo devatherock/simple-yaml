@@ -1,29 +1,18 @@
 # Changelog
 
 ## [Unreleased]
+### Added
+- Spotless plugin
+
 ### Changed
 - Configure Renovate
-- chore(deps): update plugin org.sonarqube to v3.4.0.2513
-- chore(deps): update plugin org.owasp.dependencycheck to v7.1.1
-- chore(deps): update plugin org.owasp.dependencycheck to v7.2.1
 - feat: Updated changelog updater user
-- chore(deps): update dependency gradle to v6.9.3
-- chore(deps): update plugin org.owasp.dependencycheck to v7.3.0
-- chore(deps): update plugin org.sonarqube to v3.5.0.2730
-- chore(deps): update plugin org.owasp.dependencycheck to v7.3.2
-- chore(deps): update plugin org.owasp.dependencycheck to v7.4.0
-- chore(deps): update plugin org.owasp.dependencycheck to v7.4.1
-- chore(deps): update plugin org.owasp.dependencycheck to v7.4.3
-- chore(deps): update plugin org.owasp.dependencycheck to v7.4.4
-- chore(deps): update plugin org.owasp.dependencycheck to v8
-- chore(deps): update plugin org.owasp.dependencycheck to v8.0.2
 - fix(deps): update dependency org.projectlombok:lombok to v1.18.26
-- chore(deps): update plugin org.owasp.dependencycheck to v8.1.0
 - chore(deps): update plugin org.sonarqube to v4
-- chore(deps): update dependency gradle to v6.9.4
 - chore(deps): update plugin com.github.kt3k.coveralls to v2.12.2
 - chore(deps): update plugin io.github.gradle-nexus.publish-plugin to v1.3.0
 - chore(deps): update plugin org.owasp.dependencycheck to v8.2.1
+- Upgraded to gradle 7 and Java 17
 
 ## [0.3.0] - 2022-05-06
 ### Added

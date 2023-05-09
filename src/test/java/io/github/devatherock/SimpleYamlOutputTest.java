@@ -9,8 +9,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import io.github.devatherock.simpleyaml.SimpleYamlOutput;
 
@@ -29,7 +29,7 @@ public class SimpleYamlOutputTest {
         map.put("colors", Arrays.asList("red", "blue"));
         String output = SimpleYamlOutput.toYaml(map);
 
-        Assert.assertEquals(getContent("readme-no-options.yml"), output);
+        Assertions.assertEquals(getContent("readme-no-options.yml"), output);
     }
 
     @Test
@@ -47,7 +47,7 @@ public class SimpleYamlOutputTest {
                 .build();
         String output = yaml.dump(map);
 
-        Assert.assertEquals(getContent("readme-all-options.yml"), output);
+        Assertions.assertEquals(getContent("readme-all-options.yml"), output);
     }
 
     private String getContent(String fileName) throws IOException, URISyntaxException {
