@@ -15,6 +15,7 @@
 - Upgraded to gradle 7 and Java 17
 - fix(deps): update dependency org.spockframework:spock-core to v2.3-groovy-4.0
 - fix(deps): update dependency org.projectlombok:lombok to v1.18.28
+- chore(deps): update plugin com.diffplug.spotless to v6.19.0
 
 ## [0.3.0] - 2022-05-06
 ### Added
