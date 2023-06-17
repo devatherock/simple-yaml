@@ -19,6 +19,7 @@
 - chore(deps): update plugin org.sonarqube to v4.1.0.3113
 - chore(deps): update plugin org.sonarqube to v4.2.0.3129
 - chore(deps): update plugin org.sonarqube to v4.2.1.3168
+- chore(deps): update devatherock/simple-slack docker tag to v1
 
 ## [0.3.0] - 2022-05-06
 ### Added
