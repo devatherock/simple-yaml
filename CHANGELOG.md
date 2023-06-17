@@ -18,6 +18,7 @@
 - chore(deps): update plugin com.diffplug.spotless to v6.19.0
 - chore(deps): update plugin org.sonarqube to v4.1.0.3113
 - chore(deps): update plugin org.sonarqube to v4.2.0.3129
+- chore(deps): update plugin org.sonarqube to v4.2.1.3168
 
 ## [0.3.0] - 2022-05-06
 ### Added
