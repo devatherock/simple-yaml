@@ -7,3 +7,4 @@
 .project
 code-formatter.xml
 checkstyle.xml
+codenarc.xml
