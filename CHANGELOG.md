@@ -34,6 +34,7 @@
 - chore(deps): update dependency gradle to v7.6.3
 - chore(deps): update plugin org.owasp.dependencycheck to v8.4.2
 - chore(deps): update plugin org.sonarqube to v4.4.1.3373
+- fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.10.1
 
 ## [0.3.0] - 2022-05-06
 ### Added
