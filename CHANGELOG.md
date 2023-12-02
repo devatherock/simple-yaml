@@ -37,6 +37,7 @@
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.10.1
 - chore(deps): update plugin org.owasp.dependencycheck to v8.4.3
 - chore(deps): update plugin org.owasp.dependencycheck to v9
+- chore(deps): update plugin org.owasp.dependencycheck to v9.0.2
 
 ## [0.3.0] - 2022-05-06
 ### Added
