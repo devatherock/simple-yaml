@@ -39,6 +39,7 @@
 - chore(deps): update plugin org.owasp.dependencycheck to v9
 - chore(deps): update plugin org.owasp.dependencycheck to v9.0.2
 - chore(deps): update plugin com.diffplug.spotless to v6.23.2
+- chore(deps): update plugin com.diffplug.spotless to v6.23.3
 
 ## [0.3.0] - 2022-05-06
 ### Added
