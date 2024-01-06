@@ -43,6 +43,7 @@
 - chore(deps): update plugin org.owasp.dependencycheck to v9.0.4
 - chore(deps): update plugin org.owasp.dependencycheck to v9.0.6
 - chore(deps): update plugin org.owasp.dependencycheck to v9.0.7
+- chore(deps): update plugin org.owasp.dependencycheck to v9.0.8
 
 ## [0.3.0] - 2022-05-06
 ### Added
