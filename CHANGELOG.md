@@ -7,49 +7,19 @@
 ### Changed
 - Configure Renovate
 - feat: Updated changelog updater user
-- fix(deps): update dependency org.projectlombok:lombok to v1.18.26
-- chore(deps): update plugin org.sonarqube to v4
 - chore(deps): update plugin com.github.kt3k.coveralls to v2.12.2
 - chore(deps): update plugin io.github.gradle-nexus.publish-plugin to v1.3.0
-- chore(deps): update plugin org.owasp.dependencycheck to v8.2.1
-- Upgraded to gradle 7 and Java 17
 - fix(deps): update dependency org.spockframework:spock-core to v2.3-groovy-4.0
-- fix(deps): update dependency org.projectlombok:lombok to v1.18.28
-- chore(deps): update plugin com.diffplug.spotless to v6.19.0
-- chore(deps): update plugin org.sonarqube to v4.1.0.3113
-- chore(deps): update plugin org.sonarqube to v4.2.0.3129
-- chore(deps): update plugin org.sonarqube to v4.2.1.3168
-- chore(deps): update devatherock/simple-slack docker tag to v1
-- chore(deps): update plugin org.owasp.dependencycheck to v8.3.1
 - Configure Mend Bolt for GitHub
-- chore(deps): update dependency gradle to v7.6.2
-- chore(deps): update plugin com.diffplug.spotless to v6.20.0
-- chore(deps): update plugin org.sonarqube to v4.3.0.3225
-- fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.10.0
-- chore(deps): update plugin org.owasp.dependencycheck to v8.4.0
-- chore(deps): update plugin org.sonarqube to v4.3.1.3277
-- chore(deps): update plugin com.diffplug.spotless to v6.21.0
 - fix(deps): update dependency org.projectlombok:lombok to v1.18.30
-- chore(deps): update plugin com.diffplug.spotless to v6.22.0
-- chore(deps): update dependency gradle to v7.6.3
-- chore(deps): update plugin org.owasp.dependencycheck to v8.4.2
 - chore(deps): update plugin org.sonarqube to v4.4.1.3373
-- fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.10.1
-- chore(deps): update plugin org.owasp.dependencycheck to v8.4.3
-- chore(deps): update plugin org.owasp.dependencycheck to v9
-- chore(deps): update plugin org.owasp.dependencycheck to v9.0.2
-- chore(deps): update plugin com.diffplug.spotless to v6.23.2
-- chore(deps): update plugin com.diffplug.spotless to v6.23.3
-- chore(deps): update plugin org.owasp.dependencycheck to v9.0.4
-- chore(deps): update plugin org.owasp.dependencycheck to v9.0.6
-- chore(deps): update plugin org.owasp.dependencycheck to v9.0.7
-- chore(deps): update plugin org.owasp.dependencycheck to v9.0.8
-- chore(deps): update plugin org.owasp.dependencycheck to v9.0.9
-- chore(deps): update plugin com.diffplug.spotless to v6.24.0
 - chore(deps): update plugin com.diffplug.spotless to v6.25.0
 - chore(deps): update cimg/openjdk docker tag to v17.0.10
 - chore(deps): update dependency gradle to v7.6.4
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.10.2
+
+### Removed
+- Dependency check plugin
 
 ## [0.3.0] - 2022-05-06
 ### Added
