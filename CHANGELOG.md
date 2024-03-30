@@ -11,7 +11,6 @@
 - chore(deps): update plugin io.github.gradle-nexus.publish-plugin to v1.3.0
 - fix(deps): update dependency org.spockframework:spock-core to v2.3-groovy-4.0
 - Configure Mend Bolt for GitHub
-- fix(deps): update dependency org.projectlombok:lombok to v1.18.30
 - chore(deps): update plugin org.sonarqube to v4.4.1.3373
 - chore(deps): update plugin com.diffplug.spotless to v6.25.0
 - chore(deps): update cimg/openjdk docker tag to v17.0.10
