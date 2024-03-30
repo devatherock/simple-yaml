@@ -111,8 +111,8 @@ workflows:
           name: test
           context:
             - docker-credentials
-            - dependencycheck-credentials
-          command_args: 'check coveralls'
+            - sonar-credentials
+          command_args: 'check coveralls sonar -Dsonar.token=$SONAR_TOKEN'
           <<: *pr_filter
           requires:
             - changelog_updater
