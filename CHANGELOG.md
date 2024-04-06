@@ -18,6 +18,7 @@
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.10.2
 - fix(deps): update dependency org.projectlombok:lombok to v1.18.32
 - chore(deps): update plugin org.sonarqube to v5
+- chore(deps): update plugin io.github.gradle-nexus.publish-plugin to v2
 
 ### Removed
 - Dependency check plugin
