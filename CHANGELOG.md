@@ -21,6 +21,7 @@
 - chore(deps): update plugin io.github.gradle-nexus.publish-plugin to v2
 - chore(deps): update cimg/openjdk docker tag to v17.0.11
 - chore(deps): update templates orb to v0.6.0
+- chore(deps): update templates orb to v0.7.0
 
 ### Removed
 - Dependency check plugin
