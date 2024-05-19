@@ -3,6 +3,13 @@ work_directory: &work_directory
 
 resource_class: &resource_class
   resource_class: small
+
+release_filter: &release_filter
+  filters:
+    branches:
+      only: non-existent-branch
+    tags:
+      only: /^v[0-9\.]+$/  
   
 pr_filter: &pr_filter
   filters:
@@ -65,40 +72,39 @@ workflows:
   version: 2.1
   build_test:
     jobs:
+      - templates/slack:
+          name: notify
+          context:
+            - docker-credentials
+            - slack-webhook
+          filters:
+            branches:
+              only: master    
       - build:
           context:
             - docker-credentials
             - sonatype-credentials
             - sonar-credentials
           command_args: 'build publishToSonatype coveralls sonar -Dsnapshot=true -Dsonar.token=$SONAR_TOKEN'
-          filters:
-            branches:
-              only: master
+          requires:
+            - notify
+
+  publish_artifacts:
+    jobs:
       - templates/slack:
           name: notify
           context:
             - docker-credentials
             - slack-webhook
-          requires:
-            - build
-  publish_artifacts:
-    jobs:
+          <<: *release_filter    
       - publish:
           context:
             - docker-credentials
             - sonatype-credentials
-          filters:
-            branches:
-              only: non-existent-branch
-            tags:
-              only: /^v[0-9\.]+$/
-      - templates/slack:
-          name: notify
-          context:
-            - docker-credentials
-            - slack-webhook
+          <<: *release_filter  
           requires:
-            - publish
+            - notify
+
   pr_check:
     jobs:
       - templates/changelog_updater:
