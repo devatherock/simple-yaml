@@ -17,6 +17,7 @@
 - chore(deps): update plugin io.github.gradle-nexus.publish-plugin to v2
 - chore(deps): update cimg/openjdk docker tag to v17.0.11
 - chore(deps): update templates orb to v0.7.0
+- fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.10.3
 
 ### Removed
 - Dependency check plugin
