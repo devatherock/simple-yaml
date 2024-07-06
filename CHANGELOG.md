@@ -19,6 +19,7 @@
 - chore(deps): update templates orb to v0.7.0
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.10.3
 - fix(deps): update dependency org.projectlombok:lombok to v1.18.34
+- chore(deps): update plugin org.sonarqube to v5.1.0.4882
 
 ### Removed
 - Dependency check plugin
