@@ -22,6 +22,7 @@
 - chore(deps): update plugin org.sonarqube to v5.1.0.4882
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.11.0
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.11.1
+- fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.11.2
 
 ### Removed
 - Dependency check plugin
