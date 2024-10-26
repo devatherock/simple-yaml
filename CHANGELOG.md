@@ -23,6 +23,7 @@
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.11.0
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.11.1
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.11.2
+- fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.11.3
 
 ### Removed
 - Dependency check plugin
