@@ -26,6 +26,7 @@
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.11.3
 - fix(deps): update dependency org.projectlombok:lombok to v1.18.36
 - chore(deps): update plugin org.sonarqube to v6
+- chore(deps): update plugin org.sonarqube to v6.0.1.5171
 
 ### Removed
 - Dependency check plugin
