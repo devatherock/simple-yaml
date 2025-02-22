@@ -30,6 +30,7 @@
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.11.4
 - chore(deps): update plugin com.diffplug.spotless to v7
 - chore(deps): update plugin com.diffplug.spotless to v7.0.2
+- fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.12.0
 
 ### Removed
 - Dependency check plugin
