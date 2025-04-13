@@ -28,7 +28,7 @@ ext {
 }
 
 dependencies {
-    def lombokVersion = '1.18.36'
+    def lombokVersion = '1.18.38'
 
     annotationProcessor group: 'org.projectlombok', name: 'lombok', version: lombokVersion
     compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
