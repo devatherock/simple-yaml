@@ -38,6 +38,7 @@
 - fix(deps): update dependency org.projectlombok:lombok to v1.18.38
 - chore(deps): update plugin org.sonarqube to v6.2.0.5505
 - chore(deps): update plugin com.diffplug.spotless to v7.0.4
+- chore(deps): update dependency gradle to v7.6.5
 
 ### Removed
 - Dependency check plugin
