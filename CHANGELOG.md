@@ -39,6 +39,7 @@
 - chore(deps): update plugin org.sonarqube to v6.2.0.5505
 - chore(deps): update plugin com.diffplug.spotless to v7.0.4
 - chore(deps): update dependency gradle to v7.6.5
+- fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.13.1
 
 ### Removed
 - Dependency check plugin
