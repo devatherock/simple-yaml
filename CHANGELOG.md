@@ -41,6 +41,7 @@
 - chore(deps): update dependency gradle to v7.6.5
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.13.1
 - fix(deps): update dependency org.junit.jupiter:junit-jupiter-api to v5.13.2
+- chore(deps): update dependency gradle to v7.6.6
 
 ### Removed
 - Dependency check plugin
